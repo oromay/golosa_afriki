@@ -1,0 +1,9 @@
+secrets.json
+*.log
+*.pot
+*.pyc
+__pycache__/
+development.py
+db.sqlite3
+media_cdn/
+static/

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main_content %}
+
+
+<div class="container">
+<div class="card-columns">
+
+
+        {% for piece in news %}
+        <div class="card" style="border-color: rgb(207, 207, 207);">
+        <img class="card-img-top"  src='{{ piece.top_image.url}}' alt="">
+          <div class="card-body ">
+            <h4 class="card-title">{{piece.title}}</h4>
+            <p class="card-text">{{piece.content|safe}}</p>
+            <p class="card-text text-right"><small class="text-muted"> {{piece.timestamp.date}} </small></p>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+</div>
+</div>
+
+{% endblock %}

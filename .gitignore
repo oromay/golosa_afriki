@@ -11,3 +11,4 @@ env/
 logs/
 restart.txt
 wsgi_virtualenv*
+django_wsgi.py

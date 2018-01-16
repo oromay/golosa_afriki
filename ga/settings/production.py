@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','smtp.gmail.com', 'alog.post@gmail.com', 'golosa-afriki.ru']
+ALLOWED_HOSTS = ['127.0.0.1','smtp.gmail.com', 'alog.post@gmail.com', '.golosa-afriki.ru']
 
 INSTALLED_APPS += ('lockdown', )
 MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )

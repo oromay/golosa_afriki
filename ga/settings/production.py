@@ -2,14 +2,15 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','smtp.gmail.com', 'alog.post@gmail.com', '.golosa-afriki.ru']
+ALLOWED_HOSTS = ['127.0.0.1','smtp.gmail.com', 'alog.post@gmail.com', 'www.golosa-afriki.ru', 'golosa-afriki.ru']
 
 #advised by manage.py check --deploy
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = False
 CSRF_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
+#Uncomment it when not using lockdown!
+#SESSION_COOKIE_SECURE = True
 
 
 INSTALLED_APPS += ('lockdown', )

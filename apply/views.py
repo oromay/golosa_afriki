@@ -23,7 +23,6 @@ from contentmanager.utilities import days_left
 #     }
 #     return render(request, "finished.html", context)
 
-
 class UploadView(FormView):
     template_name = 'apply.html'
     form_class = ApplyForm
@@ -32,7 +31,7 @@ class UploadView(FormView):
         context = super(UploadView, self).get_context_data( ** kwargs)
         context['title'] = 'Голоса Африки'
         context['Elders'] = Elder.objects.all()
-        context['days_left'] = days_left(2018,3,31, True)
+        context['days_left'] = days_left(2018,4,15, True)
 
         return context
 

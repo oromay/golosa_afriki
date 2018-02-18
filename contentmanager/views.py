@@ -16,3 +16,10 @@ def laureates(request):
         'laureates': Author.objects.all(),
     }
     return render(request, "laureates.html", context)
+
+
+def zhenya(request):
+    context = {
+        'title': "Евгений Шурыгин",
+    }
+    return render(request, "zhenya.html", context)

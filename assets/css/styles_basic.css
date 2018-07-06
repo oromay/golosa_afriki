@@ -127,4 +127,24 @@ div.activated_link {
     border-color: #000000;
     background-color: rgba(153, 148, 76, 0.2);!important
 }
-/* End Styling buttons.
+/* End Styling buttons.*/
+
+
+/* styling cards */
+h5 {
+  font-weight: 530;
+}
+.card_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+.card_link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* End styling cards */

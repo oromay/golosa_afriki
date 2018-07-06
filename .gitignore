@@ -5,7 +5,7 @@ secrets.json
 __pycache__/
 development.py
 db.sqlite3
-media_cdn/
+media/
 static/
 env/
 logs/

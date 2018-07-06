@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import mainpage, laureates, zhenya
+from .views import mainpage, laureates, zhenya, post_detail
 from apply.views import UploadView
 
 

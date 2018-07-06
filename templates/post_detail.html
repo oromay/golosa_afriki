@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main_content %}
+
+
+<div class="container">
+    <h1>{{instance.title}}</h1>
+    <p>{{instance.content}}</p>
+    <p class='lead'>{{instance.author}}</p>
+</div>
+
+{% endblock %}

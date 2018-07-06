@@ -1,6 +1,7 @@
 import datetime
 from slugify import slugify
 from transliterate import translit
+from django.utils.html import strip_tags
 
 
 def ruslugify(smth):

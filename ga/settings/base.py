@@ -61,8 +61,8 @@ INSTALLED_APPS = [
     'contentmanager',
     #third party
     'crispy_forms',
-    'ckeditor',
-    'ckeditor_uploader',
+    #'ckeditor',
+    #'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -148,8 +148,10 @@ STATICFILES_DIRS = [
     BASE_DIR.child('assets')
 ]
 STATIC_ROOT = BASE_DIR.child("static")
+
 MEDIA_ROOT = BASE_DIR.child("media_cdn")
 MEDIA_URL = '/media/'
+
 
 #Third party app settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

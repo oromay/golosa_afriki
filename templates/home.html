@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 {% block main_content %}
+{% load app_filters %}
 
 
 <div class="container">
-<div class="card-columns">
-
-
+<div class="row">
         {% for piece in news %}
-        <div class="card" style="border-color: rgb(207, 207, 207);">
-        <a href="#" style="background-color:black">
-            <img class="card-img-top"  src='{{ piece.top_image.url}}' alt="">
-              <div class="card-body ">
-                <h4 class="card-title">{{piece.title}}</h4>
-                <p class="card-text">{{piece.content|safe}}</p>
-                <p class="card-text text-right"><small class="text-muted"> {{piece.timestamp.date}} </small></p>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="/media/{{piece.top_image}}" data-holder-rendered="true">
+            <div class="card-body">
+              <p class="card-text">{{piece.content|striptags|slice:":100"}}...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted"> {{piece.content|get_time_to_read}} </small>
+              </div>
             </div>
-        </a>
+          </div>
         </div>
-
         {% endfor %}
 
 

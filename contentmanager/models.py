@@ -49,7 +49,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField("обновлён", auto_now=False, auto_now_add=True)
 
     def get_absolute_url(self):
-        return reverse("detail", kwargs={"slug": self.slug})
+        return reverse("detail", kwargs={"slug": self.id})
 
     def __str__(self):
         return self.slug
@@ -61,7 +61,7 @@ class New(models.Model):
     title = models.CharField("Название", max_length=50)
     slug = models.SlugField(unique=True)
     top_image = models.ImageField(upload_to=upload_location)
-    content= RichTextUploadingField()
+    content= models.TextField()
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 

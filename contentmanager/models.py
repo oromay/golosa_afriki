@@ -49,7 +49,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField("обновлён", auto_now=False, auto_now_add=True)
 
     def get_absolute_url(self):
-        return reverse("detail", kwargs={"slug": self.id})
+        return reverse("detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.slug

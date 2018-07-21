@@ -8,15 +8,15 @@ from .forms import ContactUsForm
 
 def mainpage(request):
     queryset = Post.objects.all().order_by("-timestamp")
-    formC = ContactUsForm(request.POST or None)
+    form = ContactUsForm(request.POST or None)
     context = {
-        'formC':formC,
+        'form':form,
         'news': New.objects.all(),
         'posts' : queryset,
         'title': "Голоса Африки",
         'showmessage': True,
     }
-    if formC.is_valid():
+    if form.is_valid():
         subject = form.cleaned_data['subject']
         message = form.cleaned_data['message']
         name = form.cleaned_data['first_name']
@@ -34,13 +34,13 @@ def mainpage(request):
 
 def post_detail(request, slug):
     instance = get_object_or_404(Post, slug=slug)
-    formC = ContactUsForm(request.POST or None)
+    form = ContactUsForm(request.POST or None)
     context = {
-        'formC':formC,
+        'form':form,
         'instance': instance,
         'title' : "ГА: " + instance.title
     }
-    if formC.is_valid():
+    if form.is_valid():
         subject = form.cleaned_data['subject']
         message = form.cleaned_data['message']
         name = form.cleaned_data['first_name']
@@ -58,13 +58,13 @@ def post_detail(request, slug):
 
 
 def laureates(request):
-    formC = ContactUsForm(request.POST or None)
+    form = ContactUsForm(request.POST or None)
     context = {
-        'formC':formC,
+        'form':form,
         'title': "лауреаты",
         'laureates': Author.objects.all(),
     }
-    if formC.is_valid():
+    if form.is_valid():
         subject = form.cleaned_data['subject']
         message = form.cleaned_data['message']
         name = form.cleaned_data['first_name']
@@ -81,12 +81,12 @@ def laureates(request):
 
 
 def zhenya(request):
-    formC = ContactUsForm(request.POST or None)
+    form = ContactUsForm(request.POST or None)
     context = {
-        'formC':formC,
+        'form':form,
         'title': "Евгений Шурыгин",
     }
-    if formC.is_valid():
+    if form.is_valid():
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             name = form.cleaned_data['first_name']

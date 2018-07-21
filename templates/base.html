@@ -1,17 +1,20 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Голоса Африки: {{title}}</title>
+    <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Philosopher|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href= {% static "css/styles_basic.css" %}>
     <link rel="stylesheet" href= {% static "css/mainpage.css" %}>
     <link rel="stylesheet" href= {% static "css/style_fonts.css" %}>
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
     <header class="d-flex" style="background-image:url(
@@ -55,7 +58,11 @@
     <div class="card-deck d-flex flex-column-reverse flex-sm-row">
       <div class="card border-0 bg-transparent">
         <div class="card-body">
-          <p class="card-text">Terms of use  </p>
+          {%if onApply%}
+          <p class="card-text"><a class='card-link social-link' href='/contact'> <i class="fas fa-pencil-alt" aria-hidden="true"></i> <i style="font-size:1rem; font-style:normal">Свяжитесь с нами</i> </a></p>
+          {% else %}
+          <p class="card-text"><a class='card-link social-link' href="" data-toggle="modal" data-target="#ContuctUs"> <i class="fas fa-pencil-alt" aria-hidden="true"></i> <i style="font-size:1rem; font-style:normal">Свяжитесь с нами</i> </a></p>
+          {% endif %}
           </div>
       </div>
       <div class="card border-0 bg-transparent">

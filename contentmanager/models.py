@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
@@ -27,7 +28,7 @@ class Author(models.Model):
     first_name = models.CharField("Имя", max_length=50)
     second_name = models.CharField("Фамилия", max_length=50)
     slug = models.SlugField(unique=True)
-    bio = models.TextField("Короткая справка",)
+    bio = RichTextField("Короткая справка",)
     avatar = models.ImageField("Аватар", upload_to='authors/')
     email = models.CharField("Почта", blank=True, max_length=100)
     is_winner = models.BooleanField(default=False)

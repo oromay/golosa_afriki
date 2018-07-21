@@ -32,6 +32,7 @@ class UploadView(FormView):
         context['title'] = 'Голоса Африки'
         context['Elders'] = Elder.objects.all()
         context['days_left'] = days_left(2018,4,15, True)
+        context['onApply'] = True
 
         return context
 

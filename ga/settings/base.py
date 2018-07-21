@@ -61,8 +61,8 @@ INSTALLED_APPS = [
     'contentmanager',
     #third party
     'crispy_forms',
-    #'ckeditor',
-    #'ckeditor_uploader',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -158,8 +158,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CKEDITOR_UPLOAD_PATH ='uploads/'
 CKEDITOR_CONFIGS = {
-    "default": {
+    "awesome_ckeditor" : {
+        'toolbar': 'Basic',
+        },
+    "default" : {
         "removePlugins": "stylesheetparser",
         'allowedContent': True,
-    }
+        }
 }

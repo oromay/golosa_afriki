@@ -11,6 +11,8 @@ $(document).ready(function(){
     $("span:contains('Browse')").replaceWith('<span class="d-none d-sm-inline-block">Выбрать...</span>');
     $("i.glyphicon").replaceWith('<i class="far fa-folder-open"></i>');
 
+
+
     $(window).resize(function() {
       if ($(this).width() >= 575) {
         $("#collapseMenu").collapse('show')

@@ -48,3 +48,9 @@
 .icon-telegram:before {
   content: "\ea95";
 }
+.icon-pencil2:before {
+  content: "\e906";
+}
+.icon-pen:before {
+  content: "\e908";
+}

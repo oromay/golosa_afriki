@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+<div class="modal fade" id="ContuctUs" tabindex="-1" role="dialog" aria-labelledby="ContuctUsTitle" aria-hidden="false">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+  <div class="modal-header"> <h5 class="modal-title" id="ContuctUsTitle">Связаться с нами</h5>
+    <button type="button" class="close" data-dismiss="modal">×</button>
+  </div>
+  <div class="modal-body">
+       {% csrf_token %}
+      {% crispy formC %}
+  </div>
+</div>
+</div>
+</div>

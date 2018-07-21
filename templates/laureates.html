@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block main_content %}
-
+{% include "contact.html" %}
 <div class="container">
         {% for winner in laureates %}
         {% if winner.is_winner %}
@@ -11,7 +11,7 @@
       </div>
       <div class="col-sm-9">
         <p class="lead"> {{winner.first_name}} {{winner.second_name}} </p>
-        <p> {{winner.bio}}</p>
+        <p> {{winner.bio|safe}}</p>
       </div>
     </div>
         {% endif %}

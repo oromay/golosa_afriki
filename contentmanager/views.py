@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import render,  get_object_or_404
 from django.views.generic import TemplateView
-from ga import settings
+from ga import settings.base.EMAIL_HOST_USER
 from .models import New, Post, Author
 from .forms import ContactUsForm
 
@@ -27,7 +27,7 @@ def mainpage(request):
         if cc_myself:
             recipients.append(sender)
 
-        send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
+        send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
         context['showmessage'] = True
     return render(request, "home.html", context)
 
@@ -51,7 +51,7 @@ def post_detail(request, slug):
         if cc_myself:
             recipients.append(sender)
 
-        send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
+        send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
         context['showmessage'] = True
     return render(request, "post_detail.html", context)
 
@@ -75,7 +75,7 @@ def laureates(request):
         if cc_myself:
             recipients.append(sender)
 
-        send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
+        send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
         context['showmessage'] = True
     return render(request, "laureates.html", context)
 
@@ -97,7 +97,7 @@ def zhenya(request):
             if cc_myself:
                 recipients.append(sender)
 
-            send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
+            send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
             context['showmessage'] = True
     return render(request, "zhenya.html", context)
 

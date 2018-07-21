@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import render,  get_object_or_404
 from django.views.generic import TemplateView
-from ga import settings.base.EMAIL_HOST_USER
+from ga.settings.base import EMAIL_HOST_USER
 from .models import New, Post, Author
 from .forms import ContactUsForm
 

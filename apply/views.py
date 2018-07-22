@@ -26,7 +26,7 @@ from contentmanager.utilities import days_left
 class UploadView(FormView):
     template_name = 'apply.html'
     form_class = ApplyForm
-    success_url = '/'
+    success_url = '/?message=success'
     def get_context_data(self, ** kwargs):
         context = super(UploadView, self).get_context_data( ** kwargs)
         context['title'] = 'Голоса Африки'

@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False 
+DEBUG = True 
 
 
 ALLOWED_HOSTS = ['127.0.0.1','smtp.gmail.com', 'alog.post@gmail.com', 'www.golosa-afriki.ru', 'golosa-afriki.ru']

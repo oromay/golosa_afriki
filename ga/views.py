@@ -1,7 +1,8 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, HttpResponseRedirect
 from django.conf import settings
-from .forms import ContactUsForm
+from django.urls import reverse
+from contentmanager.forms import ContactUsForm
 
 def contact_us(request):
     form = ContactUsForm(request.POST or None)
@@ -18,7 +19,6 @@ def contact_us(request):
             recipients.append(sender)
 
         send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
-        context = {
-        'sent': True,
-        'Text':'Спасибо!'}
-    return render(request, "base.html", context)
+        request.session['contact_name'] = name
+        return HttpResponseRedirect(reverse('contact'))
+    return render(request, "contact_us.html", context)

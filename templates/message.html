@@ -1,0 +1,9 @@
+
+{% if contact_name %}
+<div class="alert alert-success alert-dismissible fade show col-md-6" role="alert" style="position:fixed; top:15px; right:50%; transform: translateX(50%); z-index:1; opacity:0.8;">
+  <strong>Спасибо, {{contact_name}}!</strong> Ваше сообщение было отправлено.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif  %}

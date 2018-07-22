@@ -18,10 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 from apply.views import UploadView
+from .views import contact_us
 
 
 urlpatterns = [
     url(r'^abmin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^contact/$', contact_us, name="contact"),
     url(r'^', include('contentmanager.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

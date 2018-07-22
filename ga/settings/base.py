@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ga.urls'
+#ROOT_URLCONF = 'ga.urls'
 
 TEMPLATES = [
     {
@@ -152,6 +152,7 @@ STATIC_ROOT = BASE_DIR.child("static")
 MEDIA_ROOT = BASE_DIR.child("media")
 MEDIA_URL = '/media/'
 
+ROOT_URLCONF = 'ga.urls'
 
 #Third party app settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

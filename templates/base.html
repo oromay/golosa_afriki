@@ -26,7 +26,9 @@
         <h3 style="position:fixed; right:0;">
             <a href="/abmin">admin</a>
         </h3>
-{% endif %}
+     {% endif %}
+     {% include "message.html" %}
+
 
         <div class="container text-center align-self-center">
                     <h1 class="display-4 branding">Голоса Африки</h1>
@@ -61,7 +63,7 @@
           {%if onApply%}
           <p class="card-text"><a class='card-link social-link' href='/contact'> <i class="fas fa-pencil-alt" aria-hidden="true"></i> <i style="font-size:1rem; font-style:normal">Свяжитесь с нами</i> </a></p>
           {% else %}
-          <p class="card-text"><a class='card-link social-link' href="" data-toggle="modal" data-target="#ContuctUs"> <i class="fas fa-pencil-alt" aria-hidden="true"></i> <i style="font-size:1rem; font-style:normal">Свяжитесь с нами</i> </a></p>
+          <p class="card-text"><a class='card-link social-link' data-toggle="modal" href='#ContactUs'> <i class="fas fa-pencil-alt" aria-hidden="true"></i> <i style="font-size:1rem; font-style:normal">Свяжитесь с нами</i> </a></p>
           {% endif %}
           </div>
       </div>

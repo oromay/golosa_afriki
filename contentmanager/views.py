@@ -14,7 +14,7 @@ def mainpage(request):
         'news': New.objects.all(),
         'posts' : queryset,
         'title': "Голоса Африки",
-        'showmessage': True,
+        'contact_name': False,
     }
     if form.is_valid():
         subject = form.cleaned_data['subject']
@@ -28,7 +28,7 @@ def mainpage(request):
             recipients.append(sender)
 
         send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
-        context['showmessage'] = True
+        context['contact_name'] = name
     return render(request, "home.html", context)
 
 
@@ -52,7 +52,7 @@ def post_detail(request, slug):
             recipients.append(sender)
 
         send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
-        context['showmessage'] = True
+        context['contact_name'] = name
     return render(request, "post_detail.html", context)
 
 
@@ -61,7 +61,7 @@ def laureates(request):
     form = ContactUsForm(request.POST or None)
     context = {
         'form':form,
-        'title': "лауреаты",
+        'title': "Лауреаты",
         'laureates': Author.objects.all(),
     }
     if form.is_valid():
@@ -76,7 +76,7 @@ def laureates(request):
             recipients.append(sender)
 
         send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
-        context['showmessage'] = True
+        context['contact_name'] = name
     return render(request, "laureates.html", context)
 
 
@@ -98,7 +98,7 @@ def zhenya(request):
                 recipients.append(sender)
 
             send_mail(subject, message, EMAIL_HOST_USER, recipients, fail_silently=False)
-            context['showmessage'] = True
+            context['contact_name'] = name
     return render(request, "zhenya.html", context)
 
 

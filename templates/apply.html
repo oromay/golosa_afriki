@@ -56,25 +56,15 @@
   {% crispy form %}
 </div>
 <h2 id="jury">Жюри конкурса</h2>
-<div class="row">
+<div class="card-deck">
 {% for elder in Elders %}
-
-  <div class="col-md-6">
-
-
     <div class="card border-light">
-        <div class="card-body m-2 border-bottom  border-secondary rounded">
+        <div class="card-body border-bottom  border-secondary rounded">
             <img src="{{elder.avatar.url}}" class="rounded-circle float-right mx-3" style="height:100px;" alt="">
           <p class="lead  card-text">{{elder.first_name}} {{elder.second_name}}</p>
           <p class="pb-3 card-text">{{elder.bio}}</p>
       </div>
     </div>
-
-
-
-
-
-  </div>
   {% endfor %}
 </div>
 

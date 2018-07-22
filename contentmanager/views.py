@@ -9,7 +9,9 @@ from .forms import ContactUsForm
 def mainpage(request):
     queryset = Post.objects.all().order_by("-timestamp")
     form = ContactUsForm(request.POST or None)
+    message = request.GET.get("message")
     context = {
+        'message' : message,
         'form':form,
         'news': New.objects.all(),
         'posts' : queryset,

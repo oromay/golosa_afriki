@@ -56,17 +56,20 @@
   {% crispy form %}
 </div>
 <h2 id="jury">Жюри конкурса</h2>
+<div class="row">
 {% for elder in Elders %}
-<div class="row justify-content-md-center">
-        <div class="col-10 col-md-6 d-flex justify-content-center">
-<div><img src="{{elder.avatar.url}}" class="rounded-circle mb-5 mx-2" style="height:100px;" alt="">
-    </div>            <div>
-                <p class="lead"> {{elder.first_name}} {{elder.second_name}} </p>
-                <p> {{elder.bio}}</p>
-            </div>
-        </div>
+
+  <div class="col-6 col-md-4">
+    <div><img src="{{elder.avatar.url}}" class="rounded-circle mb-5 mx-2" style="height:100px;" alt="">
+    </div>
+    <div>
+      <p class="lead"> {{elder.first_name}} {{elder.second_name}} </p>
+      <p> {{elder.bio}}</p>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
 
 
 

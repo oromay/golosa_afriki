@@ -28,7 +28,7 @@ class Author(models.Model):
     first_name = models.CharField("Имя", max_length=50)
     second_name = models.CharField("Фамилия", max_length=50)
     slug = models.SlugField(unique=True)
-    bio = RichTextField("Короткая справка",)
+    bio = RichTextUploadingField("Короткая справка", extra_plugins=['uploadimage', 'div', 'devtools'])
     avatar = models.ImageField("Аватар", upload_to='authors/')
     email = models.CharField("Почта", blank=True, max_length=100)
     is_winner = models.BooleanField(default=False)

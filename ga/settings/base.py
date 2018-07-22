@@ -160,10 +160,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CKEDITOR_UPLOAD_PATH ='uploads/'
 CKEDITOR_CONFIGS = {
     "awesome_ckeditor" : {
-        'toolbar': 'Basic',
+        'toolbar': 'full',
         },
     "default" : {
-        "removePlugins": "stylesheetparser",
-        'allowedContent': True,
+        'toolbar' : "Custom",
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink','Image', 'SpecialChar'],
+            ['RemoveFormat', 'Source']
+        ]
         }
 }

@@ -22,6 +22,7 @@
     {% static "images/backgrounds/borana_backs.jpg" %}
     {% endblock %}); position:relative;">
 
+
     {% if user.is_superuser %}
         <h3 style="position:fixed; right:0;">
             <a href="/abmin">admin</a>
@@ -54,7 +55,7 @@
 
 {% endblock %}
 
-<div class="container-fluid px-0 main_footer" style="background-image:url({% static 'images/backgrounds/afar_view.jpg' %})">
+<div class="container-fluid px-0 mt-5 main_footer" style="background-image:url({% static 'images/backgrounds/afar_view.jpg' %});  background-attachment: fixed">
 
 <div id="footer">
     <div class="card-deck d-flex flex-column-reverse flex-sm-row">

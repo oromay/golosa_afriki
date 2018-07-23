@@ -6,7 +6,7 @@ from apply.views import UploadView
 urlpatterns = [
     url(r'^$', mainpage, name='home'),
     url(r'^laureates/', laureates, name='laureates'),
-    url(r'^zhenya/', zhenya, name = 'apply'),
+    url(r'^EvgeniyShurygin/', zhenya, name = 'zhenya'),
     url(r'^apply/', UploadView.as_view(), name = 'apply'),
     url(r'^author/(?P<slug>[\w-]+)', Researcher.as_view(), name = 'author'),
     url(r'^(?P<slug>[\w-]+)/$', post_detail, name = 'detail'),

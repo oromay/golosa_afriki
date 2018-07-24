@@ -73,7 +73,10 @@
   <h1 id='apply' class="sec_heading">
        Подать заявку
   </h1>
-  {% crispy form %}
+
+
+  <form method="post">{% csrf_token %}
+    {% crispy form %}</form>
 </div>
 <h2 id="jury">Жюри конкурса</h2>
 <div class="row">

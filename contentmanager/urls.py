@@ -4,7 +4,7 @@ from apply.views import UploadView
 
 
 urlpatterns = [
-    url(r'^$', mainpage, name='home'),
+    url(r'^$', UploadView.as_view(), name = 'apply'),
     url(r'^laureates/', laureates, name='laureates'),
     url(r'^EvgeniyShurygin/', zhenya, name = 'zhenya'),
     url(r'^apply/', UploadView.as_view(), name = 'apply'),

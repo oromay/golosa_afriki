@@ -31,7 +31,7 @@ class UploadView(FormView):
         context = super(UploadView, self).get_context_data( ** kwargs)
         context['title'] = 'Голоса Африки'
         context['Elders'] = Elder.objects.all()
-        context['days_left'] = days_left(2018,4,15, True)
+        context['days_left'] = days_left(2018,12,15, True)
         context['onApply'] = True
 
         return context

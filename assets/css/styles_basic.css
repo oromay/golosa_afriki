@@ -83,6 +83,18 @@ div.activated_link {
     padding-bottom: 50px;
 }
 
+/*Text for reading and links*/
+
+.mylink {
+  color: rgb(99, 99, 99);
+}
+.mylink:hover {
+  color: rgb(0,0,0);
+  text-decoration: underline
+}
+
+/*End Text for reading and links*/
+
 /*Footer*/
 .social-link {
     color: rgba(255, 255, 255, 0.75);
